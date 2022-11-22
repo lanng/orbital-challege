@@ -27,7 +27,37 @@ Para esse teste, você deve criar uma aplicação com autenticação e cadastro 
 - O código desenvolvido deve ser disponibilizado em um repositório
 - Você pode utilizar Bootstrap, Bulma ou algum outro framework que se sinta confortável
 - O layout não te fará perder pontos, mas crie uma aplicação agradável 
-- <a href="https://gitlab.com/orbital-code/orbital/tests/backend-developer/-/tree/master/">Link do repositório original  (GitLab) </a> 
+- <a href="https://gitlab.com/orbital-code/orbital/tests/backend-developer/-/tree/master/">Link do repositório original  (GitLab) </a>
 
-
-
+## Como rodar o projeto
+- Clone o repo
+- Acesse a pasta "orbital_challenge"
+```
+cd orbital_challenge
+```
+- Gerar os packages
+```
+composer install
+```
+- Gerar o .env
+```
+cp .env.example .env
+```
+- Gerar a chave da aplicação e do jwt
+```
+php artisan key:generate
+php artisan jwt:secret
+```
+- Configurar o seu .env com seu banco de dados
+- Rodar as migrations
+```
+php arisan migrate
+```
+- Adicionar usuário teste para acesso (email: test@example.com | senha: secret)
+```
+php artisan db:seed
+```
+- Por fim, servir a aplicação
+```
+php artisan serve
+```
