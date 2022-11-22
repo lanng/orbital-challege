@@ -61,3 +61,17 @@ php artisan db:seed
 ```
 php artisan serve
 ```
+
+## EndPoints
+- /api/auth/login (POST)
+  - endpoint para o usuário logar no sistema com email e senha e em caso de sucesso reotorna o token
+- /api/auth/me (POST)
+  - endpoint para receber as informações do usário logado passando o token no header da requisição
+- /api/auth/refresh (POST)
+  - endpoint para gerar outro token para o usuário passando o token atual pelo header
+- /api/auth/logout (POST)
+  -  endpoint para deslogar o usuário, invalida o token do mesmo
+- /api/v1/products (GET)
+  - retorna todos os produtos cadastrados no banco de dados
+- /api/v1/product (POST)
+  - Recebe os parametros dos produtos valida e grava no banco de dados
